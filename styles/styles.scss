@@ -1,0 +1,91 @@
+$light-cyan: hsl(193, 38%, 86%);
+$neon-green: hsl(150, 100%, 66%);
+$grayish-blue: hsl(217, 19%, 38%);
+$dark-grayish-blue: hsl(217, 19%, 24%);
+$dark-blue: hsl(218, 23%, 16%);
+
+$font-family: "Manrope", sans-serif;
+$font-size-quote: 28px;
+$font-weight: 800;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-family: $font-family;
+  font-size: $font-size-quote;
+  font-weight: $font-weight;
+}
+
+body {
+  background-color: $dark-blue;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+main {
+  background-color: $dark-grayish-blue;
+  width: 340px;
+  border-radius: 20px;
+  padding: 40px 30px 70px 30px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+  justify-content: center;
+  align-items: center;
+
+  .advice-text-number {
+    color: $neon-green;
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 0.5rem;
+    letter-spacing: 0.2rem;
+  }
+
+  #advice {
+    color: $light-cyan;
+    text-align: center;
+    margin-bottom: 10px;
+
+    &:before {
+      content: '"';
+    }
+    &:after {
+      content: '"';
+    }
+  }
+
+  .dice_button {
+    border-radius: 50%;
+    width: 70px;
+    height: 70px;
+    background-color: $neon-green;
+    border: none;
+    background-image: url("../images/icon-dice.svg");
+    background-position: center;
+    background-repeat: no-repeat;
+    position: absolute;
+    bottom: -35px;
+
+    &:hover {
+      box-shadow: 0px 0px 50px 0px $neon-green;
+      cursor: pointer;
+    }
+  }
+}
+
+@media (min-width: 1200px) {
+  main {
+    width: 550px;
+
+    img {
+      content:url("../images/pattern-divider-desktop.svg");
+    }
+  }
+}

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
+
+    <title>Frontend Mentor | Advice generator app</title>
+
+    <script
+      src="https://code.jquery.com/jquery-3.7.1.min.js"
+      integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
+      crossorigin="anonymous"
+    ></script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Manrope:wght@800&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="./styles/styles.css" />
+  </head>
+  <body>
+    <main>
+      <div class="advice-text-number">
+        Advice #<span id="advice-number">1</span>
+      </div>
+      <div id="advice">Loading...</div>
+      <img src="./images/pattern-divider-mobile.svg" alt="Divider" />
+      <button class="dice_button"></button>
+    </main>
+    <script>
+      $(document).ready(function () {
+        let counter = 0;
+
+        function generate_advice() {
+          const myRequest = new Request("https://api.adviceslip.com/advice");
+
+          fetch(myRequest)
+            .then((response) => response.json())
+            .then((data) => {
+              /* Set the advice in the box */
+              $("#advice").text(data.slip.advice);
+
+              /* Set the right number in the counter */
+              counter++;
+              $("#advice-number").text(counter);
+            })
+            .catch(console.error);
+        }
+
+        /* Load the first advice */
+        generate_advice();
+
+        $("button").on("click", function () {
+          generate_advice();
+        });
+      });
+    </script>
+  </body>
+</html>
