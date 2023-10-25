@@ -31,8 +31,8 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [Add solution URL here](https://your-solution-url.com)
-- Live Site URL: [Add live site URL here](https://your-live-site-url.com)
+- Solution URL: [https://github.com/SuperJulia2024/frontendmentor-Advice-generator-app](https://github.com/SuperJulia2024/frontendmentor-Advice-generator-app)
+- Live Site URL: [https://superjulia2024.github.io/frontendmentor-Advice-generator-app](https://superjulia2024.github.io/frontendmentor-Advice-generator-app)
 
 ## My process
 
