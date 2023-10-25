@@ -1,3 +1,4 @@
+@charset "UTF-8";
 * {
   margin: 0;
   padding: 0;
@@ -43,10 +44,10 @@ main #advice {
   margin-bottom: 10px;
 }
 main #advice:before {
-  content: '"';
+  content: "“";
 }
 main #advice:after {
-  content: '"';
+  content: "”";
 }
 main .dice_button {
   border-radius: 50%;
